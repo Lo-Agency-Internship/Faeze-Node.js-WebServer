@@ -19,7 +19,7 @@ git clone git@github.com:Lo-Agency-Internship/Faeze-Node.js-WebServer.git
 
 
 ```bash
-cd Faeze-Web-Server
+cd Faeze-Node.js-WebServer
 ```
 
 ## How to use?
