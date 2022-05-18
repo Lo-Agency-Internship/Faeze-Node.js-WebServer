@@ -1,7 +1,7 @@
 const http = require("http");
 const fs = require("fs");
 const path = require("path");
-const server = http.createServer((request, response) => {
+const webServer = http.createServer((request, response) => {
   let filePath = path.join(__dirname,"public",request.url === "/" ? "index.html" : request.url); //short if 
  let extention = path.extname(filePath); //etxname: extension
  let contetntType = "text/html"; //default
@@ -37,6 +37,6 @@ const server = http.createServer((request, response) => {
     });
   });
 
-server.listen(3000, function() {
+  webServer.listen(3000, function() {
   console.log("server is runing on port 3000")
 });
