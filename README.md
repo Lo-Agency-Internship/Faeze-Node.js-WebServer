@@ -33,4 +33,4 @@ npm run start
 ```
 for Result:
 
-Go to http://localhost:3000/ in your browser and navigate to or type into the address bar the file you’re trying to open
+Go to https://localhost:3000/ in your browser and navigate to or type into the address bar the file you’re trying to open
