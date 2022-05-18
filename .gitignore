@@ -1,0 +1,8 @@
+# Ignore everything
+*
+
+# Except these files...
+!.gitignore
+!app.js
+!readme.md
+!package.json

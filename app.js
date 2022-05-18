@@ -3,7 +3,9 @@ const fs = require("fs");
 const path = require("path");
 const webServer = http.createServer((request, response) => {
   let filePath = path.join(__dirname,"public",request.url === "/" ? "index.html" : request.url); //short if 
+  console.log(filePath);
  let extention = path.extname(filePath); //etxname: extension
+ console.log(extention);
  let contetntType = "text/html"; //default
   switch (extention) {
      case ".js":
@@ -24,14 +26,13 @@ const webServer = http.createServer((request, response) => {
    }
    fs.readFile(filePath, (error, content) => {
     if (error) {
-      if (error.code == "ENOENT") {
-         fs.readFile(path.join(__dirname, "public", "404.html"), (error,content) => {
-          response.writeHead(404, { "content-Type": "text/html" });
+      fs.readFile(path.join(__dirname, "public", "404.html"), (error,content) => {
+        response.writeHead(404, { "content-Type": "text/html" });
           response.end(content);
-        });//ENOENT means: that file does not exist(No entity (file or directory) could be found by the given path) .
-            } 
-      } else {
-       reponse.writeHead(200, { "content-Type": contetntType  });
+}); //error: that file does not exist(No entity (file or directory) could be found by the given path) .
+             
+    }else {
+       response.writeHead(200, { "content-Type": contetntType  });  //status code 200 means success
         response.end(content);
       }
     });
